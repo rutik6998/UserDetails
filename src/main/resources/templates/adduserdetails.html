@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/adduserdetails}" method="post">
+<input type="text" placeholder="Enter First Name " id="firstName" name="firstName">
+<input type="text" placeholder="Enter Middle Name " id="middleName" name="middleName">
+<input type="text" placeholder="Enter Last Name " id="lastName" name="lastName">
+<input type="text" placeholder="Enter PassWord " id="passNword" name="password">
+
+<input type="submit" value="Add User">
+<input type="button" onclick="generatePassword()" value="Generate PassWord">
+</form>
+<script>
+function generatePassword(firstName, middleName, lastName) {
+	
+	var firstName=document.getElementById("firstName").value();
+	var middleName=document.getElementById("middleName").value();
+	var lastName=document.getElementById("lastName").value();
+	
+	
+	
+	
+   
+    var firstLetters = firstName.substring(0, 2).toUpperCase();
+    var middleLetters = middleName.substring(0, 2).toUpperCase();
+    var lastLetters = lastName.substring(0, 2).toUpperCase();
+    
+    
+    var randomNumber1 = Math.floor(Math.random() * 10);
+    var randomNumber2 = Math.floor(Math.random() * 10);
+    var randomNumber3 = Math.floor(Math.random() * 10);
+    
+    
+    var password = firstLetters + middleLetters + lastLetters + randomNumber1 + randomNumber2 + randomNumber3;
+    
+    return password;
+    var password=document.getElementById("password").InnerHTML=password;
+}
+
+
+
+</script>
+
+</body>
+</html>
